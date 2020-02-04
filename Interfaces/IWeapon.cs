@@ -1,8 +1,8 @@
 namespace realmCommander.Interfaces
 {
-  public class Weapon
+  interface IWeapon
   {
-    public string Name { get; set; }
-    public string Description { get; set; }
+    public string WeaponType { get; set; }
+    public bool LongRange { get; set; }
   }
 }
