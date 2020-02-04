@@ -4,5 +4,7 @@ namespace realmCommander.Interfaces
   {
     public string WeaponType { get; set; }
     public bool LongRange { get; set; }
+
+    string GetWeaponItem();
   }
 }
