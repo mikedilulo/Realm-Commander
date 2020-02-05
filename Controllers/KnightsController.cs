@@ -42,5 +42,19 @@ namespace realmCommander.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpPost]
+    public ActionResult<Knight> Create([FromBody] Knight knightData)
+    {
+      try
+      {
+        return Ok(_ks.Create(knightData));
+      }
+      catch (Exception e)
+      {
+
+        return BadRequest(e.Message);
+      }
+    }
   }
 }

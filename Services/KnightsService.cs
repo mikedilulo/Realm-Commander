@@ -24,5 +24,11 @@ namespace realmCommander.Services
       if (exists == null) { throw new Exception("Invalid Id"); }
       return exists;
     }
+
+    internal Knight Create(Knight knightData)
+    {
+      _repo.Create(knightData);
+      return knightData;
+    }
   }
 }

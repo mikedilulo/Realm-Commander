@@ -25,5 +25,19 @@ namespace realmCommander.Repositories
       string sql = "SELECT * FROM knights WHERE id = @id";
       return _db.QueryFirstOrDefault<Knight>(sql, new { id });
     }
+
+    internal Knight Create(Knight knightData)
+    {
+      string sql = @"
+      INSERT INTO knights
+      (name, armorType, weaponType, knightClass)
+      VALUES
+      (@Name, @ArmorType, @WeaponType, @KnightClass);
+      SELECT LAST_INSERT_ID();
+      ";
+      int id = _db.ExecuteScalar<int>(sql, knightData);
+      knightData.Id = id;
+      return knightData;
+    }
   }
 }
