@@ -43,6 +43,19 @@ namespace realmCommander.Controllers
       }
     }
 
+    [HttpPost]
+    public ActionResult<Quest> Create([FromBody] Quest questData)
+    {
+      try
+      {
+        return Ok(_qs.Create(questData));
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
 
   }
 }

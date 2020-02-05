@@ -23,5 +23,11 @@ namespace realmCommander.Services
       if (qexists == null) { throw new Exception("Invalid Id"); }
       return qexists;
     }
+
+    internal Quest Create(Quest questData)
+    {
+      _qreop.Create(questData);
+      return questData;
+    }
   }
 }
