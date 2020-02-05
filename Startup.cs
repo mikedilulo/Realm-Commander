@@ -38,6 +38,8 @@ namespace realmCommander
       //NOTE Adding those Mangie Transient Services
       services.AddTransient<KnightsService>();
       services.AddTransient<KnightsRepository>();
+      services.AddTransient<QuestsService>();
+      services.AddTransient<QuestsRepository>();
     }
 
     private IDbConnection CreateDbConnection()

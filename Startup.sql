@@ -11,6 +11,17 @@ use realmcommander10;
 -- );
 
 
+  -- CREATE TABLE quests(
+  --   id int NOT NULL AUTO_INCREMENT,
+  --   title VARCHAR(255) NOT NULL,
+  --   description VARCHAR(255) NOT NULL,
+  --   completed tinyint NOT NULL DEFAULT 0,
+  --   PRIMARY KEY(id)
+  -- );
+
+  
+
+
 -- INSERT INTO knights (name, armorType, weaponType, knightClass) VALUES ("Sir Wright", "Leather", "Bow", "Elf");
 -- INSERT INTO knights (name, armorType, weaponType, knightClass) VALUES ("Dancelot", "Chains", "Sword", "Knight");
 -- INSERT INTO knights (name, armorType, weaponType, knightClass) VALUES ("Hamalot", "Iron", "Dagger", "Knight");
@@ -22,5 +33,11 @@ use realmcommander10;
 -- INSERT INTO knights (name, armorType, weaponType, knightClass) VALUES ("Sir Swelldervere", "Hoodie", "Paper", "Messenger");
 -- INSERT INTO knights (name, armorType, weaponType, knightClass) VALUES ("Sir Meldervere", "Leather", "LongBow", "Ranger");
 
--- DROP TABLE knights;
-SELECT * FROM knights;
+-- INSERT INTO quests (title, description) VALUES ("Welcome!", "Up the road you will see a lady dressed in black. Talk to her to head to your next quest");
+
+
+
+
+
+-- SELECT * FROM knights;
+-- SELECT * FROM quests;
