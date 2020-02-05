@@ -39,5 +39,13 @@ namespace realmCommander.Services
       return update;
 
     }
+
+    internal string Delete(int id)
+    {
+      var exists = _repo.GetById(id);
+      if (exists == null) { throw new Exception("Invalid Id"); }
+      _repo.Delete(id);
+      return "Successfully Deleted";
+    }
   }
 }

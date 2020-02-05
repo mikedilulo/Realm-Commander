@@ -53,5 +53,11 @@ namespace realmCommander.Repositories
       ";
       _db.Execute(sql, update);
     }
+
+    internal void Delete(int id)
+    {
+      string sql = @"DELETE FROM knights WHERE id = @id";
+      _db.Execute(sql, new { id });
+    }
   }
 }
