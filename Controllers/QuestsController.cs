@@ -30,6 +30,19 @@ namespace realmCommander.Controllers
       }
     }
 
+    [HttpGet("{id}")]
+    public ActionResult<Quest> Get(int id)
+    {
+      try
+      {
+        return Ok(_qs.GetById(id));
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
 
   }
 }

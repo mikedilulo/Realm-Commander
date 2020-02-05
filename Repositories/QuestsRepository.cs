@@ -15,9 +15,15 @@ namespace realmCommander.Repositories
     }
     internal IEnumerable<Quest> Get()
     {
-      string sql = @"SELECT * FROM quests";
+      string sql = "SELECT * FROM quests";
       return _db.Query<Quest>(sql);
 
+    }
+
+    internal Quest GetById(int id)
+    {
+      string sql = "SELECT * FROM quests WHERE id = @Id";
+      return _db.QueryFirstOrDefault<Quest>(sql, new { id });
     }
   }
 }

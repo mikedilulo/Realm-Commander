@@ -16,5 +16,12 @@ namespace realmCommander.Services
     {
       return _qreop.Get();
     }
+
+    internal Quest GetById(int id)
+    {
+      var qexists = _qreop.GetById(id);
+      if (qexists == null) { throw new Exception("Invalid Id"); }
+      return qexists;
+    }
   }
 }

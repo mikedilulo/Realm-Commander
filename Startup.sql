@@ -19,7 +19,7 @@ use realmcommander10;
   --   PRIMARY KEY(id)
   -- );
 
-  
+
 
 
 -- INSERT INTO knights (name, armorType, weaponType, knightClass) VALUES ("Sir Wright", "Leather", "Bow", "Elf");
@@ -34,10 +34,11 @@ use realmcommander10;
 -- INSERT INTO knights (name, armorType, weaponType, knightClass) VALUES ("Sir Meldervere", "Leather", "LongBow", "Ranger");
 
 -- INSERT INTO quests (title, description) VALUES ("Welcome!", "Up the road you will see a lady dressed in black. Talk to her to head to your next quest");
+-- INSERT INTO quests (title, description) VALUES ("Moving Along!", "After talking to Lady Baralook, you realize that there is an older gentlement that is in need of help with porgs in his farm.");
 
 
 
 
 
 -- SELECT * FROM knights;
--- SELECT * FROM quests;
+SELECT * FROM quests;
