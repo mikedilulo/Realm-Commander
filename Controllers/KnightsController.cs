@@ -56,5 +56,19 @@ namespace realmCommander.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpPut("{id}")]
+    public ActionResult<Knight> Edit([FromBody] Knight update, int id)
+    {
+      try
+      {
+        update.Id = id;
+        return Ok(_ks.Edit(update));
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
   }
 }

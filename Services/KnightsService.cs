@@ -30,5 +30,14 @@ namespace realmCommander.Services
       _repo.Create(knightData);
       return knightData;
     }
+
+    internal Knight Edit(Knight update)
+    {
+      var exists = _repo.GetById(update.Id);
+      if (exists == null) { throw new Exception("Invalid Id"); }
+      _repo.Edit(update);
+      return update;
+
+    }
   }
 }

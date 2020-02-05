@@ -39,5 +39,19 @@ namespace realmCommander.Repositories
       knightData.Id = id;
       return knightData;
     }
+
+    internal void Edit(Knight update)
+    {
+      string sql = @"
+      UPDATE knights
+      SET
+      name = @Name,
+      armorType = @ArmorType,
+      weaponType = @WeaponType,
+      knightClass = @KnightClass
+      WHERE id = @Id
+      ";
+      _db.Execute(sql, update);
+    }
   }
 }
