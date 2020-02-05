@@ -17,5 +17,12 @@ namespace realmCommander.Services
     {
       return _repo.Get();
     }
+
+    internal Knight Get(int id)
+    {
+      var exists = _repo.GetById(id);
+      if (exists == null) { throw new Exception("Invalid Id"); }
+      return exists;
+    }
   }
 }

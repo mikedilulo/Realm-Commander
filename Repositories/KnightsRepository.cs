@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data;
 using Dapper;
@@ -17,6 +18,12 @@ namespace realmCommander.Repositories
       string sql = "SELECT * FROM knights";
       return _db.Query<Knight>(sql);
 
+    }
+
+    internal Knight GetById(int id)
+    {
+      string sql = "SELECT * FROM knights WHERE id = @id";
+      return _db.QueryFirstOrDefault<Knight>(sql, new { id });
     }
   }
 }

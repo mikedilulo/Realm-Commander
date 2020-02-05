@@ -28,5 +28,19 @@ namespace realmCommander.Controllers
         return BadRequest(e.Message);
       }
     }
+
+    [HttpGet("{id}")]
+    public ActionResult<Knight> Get(int id)
+    {
+      try
+      {
+        return Ok(_ks.Get(id));
+      }
+      catch (Exception e)
+      {
+
+        return BadRequest(e.Message);
+      }
+    }
   }
 }
