@@ -4,21 +4,24 @@ namespace realmCommander.Models
 {
   public class Knight : IWeapon
   {
+    public int Id { get; set; }
     public string Name { get; set; }
-    public bool HasArmor { get; set; }
+    public string ArmorType { get; set; }
     public string WeaponType { get; set; }
-    public bool LongRange { get; set; }
+    public string KnightClass { get; set; }
 
     public string GetWeaponItem()
     {
-      return $"{WeaponType} --- {LongRange}";
+      return $"{WeaponType} --- {KnightClass}";
     }
-    public Knight(string name, string weaponType, bool longRange)
+
+    public Knight() { }
+    public Knight(string name, string armorType, string weaponType, string knightClass)
     {
       Name = name;
-      HasArmor = true;
+      ArmorType = armorType;
       WeaponType = weaponType;
-      LongRange = longRange;
+      KnightClass = knightClass;
     }
   }
 }

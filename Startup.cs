@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
+using realmCommander.Repositories;
+using realmCommander.Services;
 
 namespace realmCommander
 {
@@ -30,6 +32,12 @@ namespace realmCommander
       services.AddControllers();
 
       services.AddScoped<IDbConnection>(x => CreateDbConnection());
+
+
+
+      //NOTE Adding those Mangie Transient Services
+      services.AddTransient<KnightsService>();
+      services.AddTransient<KnightsRepository>();
     }
 
     private IDbConnection CreateDbConnection()
