@@ -70,6 +70,19 @@ namespace realmCommander.Controllers
       }
     }
 
+    [HttpDelete("{id}")]
+    public ActionResult<String> Delete(int id)
+    {
+      try
+      {
+        return Ok(_qs.Delete(id));
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
 
   }
 }

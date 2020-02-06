@@ -37,5 +37,14 @@ namespace realmCommander.Services
       _qreop.Edit(update);
       return update;
     }
+
+    internal string Delete(int id)
+    {
+      var qexists = _qreop.GetById(id);
+      if (qexists == null) { throw new Exception("Invalid id"); }
+      _qreop.Delete(id);
+      return "Successfully Deleted";
+
+    }
   }
 }

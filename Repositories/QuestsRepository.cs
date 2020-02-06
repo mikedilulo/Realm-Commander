@@ -52,5 +52,11 @@ namespace realmCommander.Repositories
       _db.Execute(sql, update);
 
     }
+
+    internal void Delete(int id)
+    {
+      string sql = "DELETE FROM quests WHERE id = @Id";
+      _db.Execute(sql, new { id });
+    }
   }
 }
