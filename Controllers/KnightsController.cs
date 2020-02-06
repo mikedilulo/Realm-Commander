@@ -11,10 +11,12 @@ namespace realmCommander.Controllers
   public class KnightsController : ControllerBase
   {
     private readonly KnightsService _ks;
+    private readonly QuestsService _qs;
 
-    public KnightsController(KnightsService ks)
+    public KnightsController(KnightsService ks, QuestsService qs)
     {
       _ks = ks;
+      _qs = qs;
     }
     [HttpGet]
     public ActionResult<IEnumerable<Knight>> Get()
@@ -39,6 +41,20 @@ namespace realmCommander.Controllers
       catch (Exception e)
       {
 
+        return BadRequest(e.Message);
+      }
+    }
+
+    [HttpGet("{id}/quests")]
+    public ActionResult<IEnumerable<Quest>> GetQuests(int id)
+    {
+      try
+      {
+        return Ok(_qs.GetByKnightId(id));
+
+      }
+      catch (Exception e)
+      {
         return BadRequest(e.Message);
       }
     }

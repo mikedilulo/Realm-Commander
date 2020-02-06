@@ -46,5 +46,10 @@ namespace realmCommander.Services
       return "Successfully Deleted";
 
     }
+
+    internal IEnumerable<Quest> GetByKnightId(int knightId)
+    {
+      return _qreop.GetQuestsByKnightId(knightId);
+    }
   }
 }

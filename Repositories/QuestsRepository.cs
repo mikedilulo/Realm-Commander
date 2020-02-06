@@ -53,6 +53,17 @@ namespace realmCommander.Repositories
 
     }
 
+    internal IEnumerable<Quest> GetQuestsByKnightId(int knightId)
+    {
+      string sql = @"
+      SELECT q.*
+      FROM knightsquests qs
+      JOIN quests q ON q.id = qs.questId
+      WHERE knightId = @KnightId";
+
+      return _db.Query<Quest>(sql, new { knightId });
+    }
+
     internal void Delete(int id)
     {
       string sql = "DELETE FROM quests WHERE id = @Id";

@@ -72,9 +72,11 @@ use realmcommander10;
 -- INSERT INTO quests (title, description) VALUES ("Moving Along!", "After talking to Lady Baralook, you realize that there is an older gentlement that is in need of help with porgs in his farm.");
 
 
+-- SELECT * FROM knightsquests kq
+-- JOIN knights k ON k.id = kq.knightId;
 
 
 
 -- SELECT * FROM knights;
 -- SELECT * FROM quests;
--- SELECT * FROM knightsquests;
+SELECT * FROM knightsquests;

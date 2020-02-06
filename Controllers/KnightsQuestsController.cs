@@ -6,7 +6,7 @@ using realmCommander.Services;
 namespace realmCommander.Controllers
 {
   [ApiController]
-  [Route("api/[controller")]
+  [Route("api/[controller]")]
 
   public class KnightsQuestsController : ControllerBase
   {

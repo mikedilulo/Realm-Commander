@@ -40,6 +40,8 @@ namespace realmCommander
       services.AddTransient<KnightsRepository>();
       services.AddTransient<QuestsService>();
       services.AddTransient<QuestsRepository>();
+      services.AddTransient<KnightsQuestsService>();
+      services.AddTransient<KnightsQuestsRepository>();
     }
 
     private IDbConnection CreateDbConnection()
