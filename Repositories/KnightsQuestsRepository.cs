@@ -13,14 +13,25 @@ namespace realmCommander.Repositories
     {
       _db = db;
     }
-    internal void Create(KnightQuest newData)
+    internal KnightQuest Create(KnightQuest newData)
     {
-      throw new NotImplementedException();
+      string sql = @"
+      INSERT INTO knightsquests
+      (knightId, questId)
+      VALUES
+      (@KnightId, @QuestId);
+      SELECT LAST_INSERT_ID();
+      ";
+      int id = _db.ExecuteScalar<int>(sql, newData);
+      newData.Id = id;
+      return newData;
+
     }
 
     internal void Delete(int id)
     {
-      throw new NotImplementedException();
+      string sql = "DELETE FROM knightsquests WHERE id = @Id";
+      _db.Execute(sql, new { id });
     }
 
     internal KnightQuest Find(KnightQuest kqs)
