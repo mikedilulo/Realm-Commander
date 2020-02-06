@@ -1,5 +1,7 @@
 use realmcommander10;
 
+-- DROP TABLE knightsquests;
+
 -- CREATE TABLE knights (
 
 -- id int NOT NULL AUTO_INCREMENT,
@@ -18,6 +20,39 @@ use realmcommander10;
   --   completed tinyint NOT NULL DEFAULT 0,
   --   PRIMARY KEY(id)
   -- );
+
+  -- CREATE TABLE knightsquests(
+  --   id int NOT NULL AUTO_INCREMENT,
+  --   knightId int NOT NULL,
+  --   questId int NOT NULL,
+  --   PRIMARY KEY(id),
+
+  --   FOREIGN KEY(knightId)
+  --   REFERENCES knights(id)
+  --   ON DELETE CASCADE,
+
+  --   FOREIGN KEY(questId)
+  --   REFERENCES quests(id)
+  --   ON DELETE CASCADE
+  -- );
+
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (1, 1)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (1, 2)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (1, 4)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (3, 2)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (3, 2)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (4, 1)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (4, 4)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (6, 1)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (7, 1)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (7, 2)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (7, 4)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (9, 1)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (11, 2)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (11, 4)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (12, 1)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (12, 2)
+  -- INSERT INTO knightsquests(knightId, questId) VALUES (12, 4)
 
 
 
@@ -41,4 +76,5 @@ use realmcommander10;
 
 
 -- SELECT * FROM knights;
-SELECT * FROM quests;
+-- SELECT * FROM quests;
+-- SELECT * FROM knightsquests;
