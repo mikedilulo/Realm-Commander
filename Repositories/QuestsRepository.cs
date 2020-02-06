@@ -38,5 +38,19 @@ namespace realmCommander.Repositories
       questData.Id = id;
       return questData;
     }
+
+    internal void Edit(Quest update)
+    {
+      string sql = @"
+      UPDATE quests
+      SET
+      title = @Title,
+      description = @Description,
+      completed = @Completed
+      WHERE id = @Id
+       ";
+      _db.Execute(sql, update);
+
+    }
   }
 }

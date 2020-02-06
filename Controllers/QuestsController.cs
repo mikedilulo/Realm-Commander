@@ -56,6 +56,20 @@ namespace realmCommander.Controllers
       }
     }
 
+    [HttpPut("{id}")]
+    public ActionResult<Quest> Edit([FromBody] Quest update, int id)
+    {
+      try
+      {
+        update.Id = id;
+        return Ok(_qs.Edit(update));
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
 
   }
 }

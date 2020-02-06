@@ -29,5 +29,13 @@ namespace realmCommander.Services
       _qreop.Create(questData);
       return questData;
     }
+
+    internal Quest Edit(Quest update)
+    {
+      var qexists = _qreop.GetById(update.Id);
+      if (qexists == null) { throw new Exception("Invalid Id"); }
+      _qreop.Edit(update);
+      return update;
+    }
   }
 }
