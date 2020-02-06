@@ -42,6 +42,8 @@ namespace realmCommander
       services.AddTransient<QuestsRepository>();
       services.AddTransient<KnightsQuestsService>();
       services.AddTransient<KnightsQuestsRepository>();
+
+      //NOTE Managed to get my relationships going! Woot Woot! 
     }
 
     private IDbConnection CreateDbConnection()
